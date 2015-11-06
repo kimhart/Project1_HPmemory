@@ -1,12 +1,16 @@
-$(document).ready(function(){ 
-	console.log('This is linked!')
-});
 
+// Make any card flip //
 
+var anyCard = document.querySelector("#board");
+anyCard.addEventListener("click", flipCard);
+ 
+function flipCard(e) {
+    if (e.target !== e.currentTarget) {
+        var clickedItem = e.target.id;
+        console.log(event);
+    }
 
-var flipCard = function (event) {
-		target = event.target;
-}
+    e.stopPropagation();
+};
 
-
-$(document.target).on('click', flipCard);
+//
