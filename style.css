@@ -18,8 +18,7 @@ header {
 	border: 1px solid white;
 }
 
-.card {
-	background-image: url("facedown_card.png");
+.facedown, .character {
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 110px;
@@ -30,9 +29,14 @@ header {
 	display: inline-block;
 }
 
-.blue {
-	background-color: blue;
+.character {
+	background-image: url("images/harry.png");
 }
+
+.facedown {
+	background-image: url("images/facedown_card.png");
+}
+
 
 
 
