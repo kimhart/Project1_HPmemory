@@ -1,6 +1,38 @@
 body {
-	background-color: #000;
+	background-color: #000; /* add a background image, potentially change with each level? */
 	color: #FFFFFF;
 	font-family: 'Roboto', sans-serif; /* weight 300, 400, 500, 700 / italc */
 }
-/* Parry Hotter Font for image */
+
+header {
+	margin: 0 auto;
+	max-width: 600px;
+	display: block;
+	text-align: center;
+}
+
+.board {
+	margin: 0 auto;
+	max-width: 600px;
+	display: block;
+
+}
+
+.card {
+	background-image: url("facedown_card.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 120px;
+	height: 230px;
+	text-align: center;
+	cursor: pointer;
+	margin: 10px;
+	float: left;
+}
+
+
+
+
+
+
+
