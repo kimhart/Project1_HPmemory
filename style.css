@@ -17,13 +17,13 @@ body {
 	width: 550px;
 	display: block;
 	margin: 0 auto;
+	padding-top: 40px;
 }
 
 .board {
 	margin: 0 auto;
 	width: 80%;
 	display: block;
-	padding: 10px;
 	height: 600px;
 	white-space: nowrap;
 }
@@ -51,10 +51,10 @@ body {
 	margin: 0 auto;
 	width: 25%;
 	display: block;
-	background-color: none;
+	background-color: white;
 	text-align: center;
-	color: #FFFFFF;
-	font-size: 16px;
+	color: #000;
+	font-size: 18px;
 	padding: 10px;
 	text-align: center;
 	margin-top: 20px;

@@ -31,22 +31,19 @@ var characterList = [
 		{name: "ron2", img: "images/ron.png"}
 		];
 
-function shuffle(array) {
-  var currentIndex = characterList.length, temporaryValue, randomIndex ;
-  while (0 !== currentIndex) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
 
-    temporaryValue = chacterList[currentIndex];
-    chacterList[currentIndex] = chacterList[randomIndex];
-    chacterList[randomIndex] = temporaryValue;
-  }
-
-  return chacterList;
-}
+function shuffleArray(array) {
+    for (var i = characterList.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = characterList[i];
+        characterList[i] = characterList[j];
+        characterList[j] = temp;
+    }
+    return characterList;
+};
 
 // run shuffle function on click:
-startNewGame.addEventListener("click", shuffle);
+// startNewGame.addEventListener("click", shuffle);
 
 
 
