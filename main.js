@@ -20,8 +20,6 @@ var card8 = document.querySelector("#card8");
 var startNewGame = document.querySelector(".new-game-button");
 
 
-
-
 // SHUFFLE THROUGH THE CARDS //
 
 var characterList = [ 
