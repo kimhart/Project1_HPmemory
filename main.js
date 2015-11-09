@@ -14,15 +14,15 @@ var allCards = document.querySelectorAll(".card");
 
 
 var characterList = [ 
-		{name: "harry", img: "images/harry.png"}, 
-		{name: "harry2", img: "images/harry.png"},
-		{name: "hermione", img: "images/hermione.png"},
-		{name: "hermione2", img: "images/hermione.png"},
-		{name: "ron", img: "images/ron.png"},
-		{name: "ron2", img: "images/ron.png"},
-		{name: "dobby", img: "images/dobby.png"},
-		{name: "dobby2", img: "images/dobby.png"}
-		];
+	{name: "harry", img: "images/harry.png"}, 
+	{name: "harry2", img: "images/harry.png"},
+	{name: "hermione", img: "images/hermione.png"},
+	{name: "hermione2", img: "images/hermione.png"},
+	{name: "ron", img: "images/ron.png"},
+	{name: "ron2", img: "images/ron.png"},
+	{name: "dobby", img: "images/dobby.png"},
+	{name: "dobby2", img: "images/dobby.png"}
+];
 
 
 var flipCard1 = function(event){
