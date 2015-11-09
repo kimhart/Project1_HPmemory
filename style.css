@@ -25,22 +25,27 @@ body {
 	width: 80%;
 	display: block;
 	height: 600px;
-	white-space: nowrap;
+}
+.row-1, .row-2 {
+	margin: auto;
+	width: 80%;
+	display: block;
 }
 
 .card {
 	background-size: contain;
 	background-repeat: no-repeat;
-	width: 120px;
-	height: 155px;
-	text-align: center;
+	width: 25%;
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	height: 145px;
 	cursor: pointer;
-	margin: 5px;
-	display: inline-block;
+	float: left;
 }
 
 .character {
-	background-image: url("images/harry.png");
+	background-color: blue;
 }
 
 .facedown {
@@ -49,16 +54,17 @@ body {
 
 .new-game-button {
 	margin: 0 auto;
-	width: 25%;
+	min-width: 25%;
 	display: block;
 	background-color: white;
 	text-align: center;
-	color: #000;
+	color: #FFFFFF;
 	font-size: 18px;
 	padding: 10px;
 	text-align: center;
-	margin-top: 20px;
 	margin-bottom: 20px;
+	cursor: pointer;
+	background-color: #556B2F;
 }
 
 
