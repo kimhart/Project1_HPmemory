@@ -1,6 +1,5 @@
 
 
-// STUPID STUPID NOT-DRY SHAMELESS CODE //
 
 var card1 = document.querySelector("#card1");
 var card2 = document.querySelector("#card2");
@@ -14,76 +13,85 @@ var allCards = document.querySelectorAll(".card");
 
 
 var characterList = [ 
-		{name: "harry", img: "images/harry.png"}, 
-		{name: "harry2", img: "images/harry.png"},
-		{name: "hermione", img: "images/hermione.png"},
-		{name: "hermione2", img: "images/hermione.png"},
-		{name: "ron", img: "images/ron.png"},
-		{name: "ron2", img: "images/ron.png"},
-		{name: "dobby", img: "images/dobby.png"},
-		{name: "dobby2", img: "images/dobby.png"}
-		];
+	{name: "harry", img: "images/harry.png"}, 
+	{name: "harry", img: "images/harry.png"},
+	{name: "hermione", img: "images/hermione.png"},
+	{name: "hermione", img: "images/hermione.png"},
+	{name: "ron", img: "images/ron.png"},
+	{name: "ron", img: "images/ron.png"},
+	{name: "dobby", img: "images/dobby.png"},
+	{name: "dobby", img: "images/dobby.png"}
+];
 
 
-var flipCard1 = function(event){
-	card1.classList.remove("facedown");
-	card1.classList.add("character")
-    console.log(event);
-};
-var flipCard2 = function(event){
-	card2.classList.remove("facedown");
-	card2.classList.add("character")
-    console.log(event);
-};
-var flipCard3 = function(event){
-	card3.classList.remove("facedown");
-	card3.classList.add("character")
-    console.log(event);
-};
-var flipCard4 = function(event){
-	card4.classList.remove("facedown");
-	card4.classList.add("character")
-    console.log(event);
-};
-var flipCard5 = function(event){
-	card5.classList.remove("facedown");
-	card5.classList.add("character")
-    console.log(event);
-};
-var flipCard6 = function(event){
-	card6.classList.remove("facedown");
-	card6.classList.add("character")
-    console.log(event);
-};
-var flipCard7 = function(event){
-	card7.classList.remove("facedown");
-	card7.classList.add("character")
-    console.log(event);
-};
-var flipCard8 = function(event){
-	card8.classList.remove("facedown");
-	card8.classList.add("character")
-    console.log(event);
-};
 
-card1.addEventListener("click", flipCard1);
-card2.addEventListener("click", flipCard2);
-card3.addEventListener("click", flipCard3);
-card4.addEventListener("click", flipCard4);
-card5.addEventListener("click", flipCard5);
-card6.addEventListener("click", flipCard6);
-card7.addEventListener("click", flipCard7);
-card8.addEventListener("click", flipCard8);
+// var makeCard = function(){
+// 	var newCard = document.createElement('div');
+// 	newCard.classList.add('card')
+// 	newCard.classList.add('facedown')
+// 	return newCard;	
+// }
 
-
-// ALSO NOT WORKING 
-
-// var turnAllFacedown = function(event){
-// 	if (allCards.classList.contains("character"){
-// 		return allCards.classList.remove("character");
-// 		       allCards.classList.add("facedown");
-// 	}	
+// makeNewCards = function() {
+// 	for(var i = 0; i < characterList.length; i++) {
+// 		var newCard = document.createElement('div');
+// 		newCard.classList.add('card')
+// 		newCard.classList.add('facedown')
+// 		console.log(characterList[i]);	
+// 	}
 // };
+
+
+// // target .card in the DOM and use a for loop to add each name
+// var assignCharacters = function(){
+// 	for(var i = 0; i < characterList.length; i++) {
+// 		$('.card').addClass('character');
+// 		$('.card')
+// 	return setCharacter;
+// 	}
+// }
+
+//event listeners for clicks on cards
+// card1.addEventListener("click", flipCard1);
+// card2.addEventListener("click", flipCard2);
+// card3.addEventListener("click", flipCard3);
+// card4.addEventListener("click", flipCard4);
+
+// determining first and second click
+var firstClick = false;
+var secondClick = false;
+
+// ANNA's IDEA //
+// Grab the classList array & save it to a variable
+		// Remove 'card' from THAT ARRAY 
+		// The remaining element in the array should be the character name!
+		// Get that character name out of the array
+		// See if the OTHER clicked div has that class as well.
+		
+
+var handleClick = function(event){
+	event.target.classList.remove("facedown");
+	if (firstClick) {
+		secondClick = event.target;
+		
+		
+		// better decide if they match quick!
+		// if they match remain face up, can't click anymore
+		// else maybe reset first and second click
+		firstClick = false;
+		secondClick = false;
+	} else {
+		firstClick =  event.target;
+	}
+
+	console.log(event);
+}
+
+
+
+
+$('.card').on('click', handleClick)
+
 
 
 function shuffleArray(array) {
@@ -96,28 +104,26 @@ function shuffleArray(array) {
     return characterList;
 };
 
+var newGame = function(event){
+	console.log("clicked")
+	shuffleArray(characterList)
+	var shuffledCharacters = shuffleArray(characterList) 
+	var cards = $('.card');
+	for (i = 0; i < shuffledCharacters.length; i++) {
+		cards.eq(i).addClass(shuffledCharacters[i].name)
+	}
+	
+}
 
 var startNewGame = document.querySelector(".new-game-button");
-startNewGame.addEventListener("click", shuffleArray);
+startNewGame.addEventListener("click", newGame);
 // startNewGame.addEventListener("click", turnAllFacedown); // ISN'T WORKING WITH TWO EVENT LISTENERS
 
 
 
-// var winOrLoseBox = document.querySelector(".win-or-lose-textbox");
-// var choice1 = ??? //how do I determine this mofoooooo
-// var choice2 = ???
 
 
-// // do they match?? 
-// var doTheCardsMatch = function() {
-// 	if (choice1 === choice2) {
-// 		winOrLoseBox.textContent = "10 Points for Gryffindor! Keep going!";
-// 		// remove after a few seconds?
-// 	} else {
-// 		winOrLoseBox.textContent = ""
-// 	}
-// }
-
+//win or lose box in a separate function
 
 
 
