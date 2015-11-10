@@ -1,6 +1,11 @@
 # Project1_HPmemory
 Harry Potter Memory Game
 
+GitHub Pages Link
+-----------------
+
+http://kimhart.github.io/Project1_HPmemory/
+
 Author
 ------
 
