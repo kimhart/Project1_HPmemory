@@ -47,8 +47,20 @@ body {
 	float: left;
 }
 
-.character {
-	
+.harry {
+	background-image: url("images/harry.png");
+}
+
+.hermione {
+	background-image: url("images/hermione.png");
+}
+
+.ron {
+	background-image: url("images/ron.png");
+}
+
+.dobby {
+	background-image: url("images/dobby.png");
 }
 
 .facedown {
@@ -83,7 +95,6 @@ body {
 	font-weight: 300;
 	color: #FFFFFF;
 }
-
 
 
 

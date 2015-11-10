@@ -24,77 +24,61 @@ var characterList = [
 ];
 
 
-
-// var makeCard = function(){
-// 	var newCard = document.createElement('div');
-// 	newCard.classList.add('card')
-// 	newCard.classList.add('facedown')
-// 	return newCard;	
-// }
-
-// makeNewCards = function() {
-// 	for(var i = 0; i < characterList.length; i++) {
-// 		var newCard = document.createElement('div');
-// 		newCard.classList.add('card')
-// 		newCard.classList.add('facedown')
-// 		console.log(characterList[i]);	
-// 	}
-// };
-
-
-// // target .card in the DOM and use a for loop to add each name
-// var assignCharacters = function(){
-// 	for(var i = 0; i < characterList.length; i++) {
-// 		$('.card').addClass('character');
-// 		$('.card')
-// 	return setCharacter;
-// 	}
-// }
-
-//event listeners for clicks on cards
-// card1.addEventListener("click", flipCard1);
-// card2.addEventListener("click", flipCard2);
-// card3.addEventListener("click", flipCard3);
-// card4.addEventListener("click", flipCard4);
-
 // determining first and second click
-var firstClick = false;
-var secondClick = false;
+// var firstClick = false;
+// var secondClick = false;
 
-// ANNA's IDEA //
-// Grab the classList array & save it to a variable
-		// Remove 'card' from THAT ARRAY 
-		// The remaining element in the array should be the character name!
-		// Get that character name out of the array
-		// See if the OTHER clicked div has that class as well.
-		
+var clickedCards = [];
 
-var handleClick = function(event){
-	event.target.classList.remove("facedown");
-	if (firstClick) {
-		secondClick = event.target;
-		
-		
-		// better decide if they match quick!
-		// if they match remain face up, can't click anymore
-		// else maybe reset first and second click
-		firstClick = false;
-		secondClick = false;
-	} else {
-		firstClick =  event.target;
+var names = ['harry', 'hermione', 'ron', 'dobby'];
+
+	
+var handleClick = function(event) {
+	var classes = event.target.classList;
+	var cardName;
+	for (var i =0; i < classes.length; i++) {
+		if(names.indexOf(classes[i]) !== -1) {
+			cardName = classes[i];
+		}
 	}
+	var cardId = event.target.id;
+	var cardObj = {name: cardName, id: cardId};
+	clickedCards.push(cardObj);
+	event.target.classList.remove('facedown');
 
-	console.log(event);
-}
+	if (clickedCards.length === 2) {
+		console.log(clickedCards);
+		if (clickedCards[0].name === clickedCards[1].name) {
+			console.log('YOU WON');
+			clickedCards = [];
+		} else {
+			var firstCard = '#' + clickedCards[0].id; 
+			var secondCard = '#' + clickedCards[1].id;
+			var firstCardEl = document.querySelector(firstCard);
+			var secondCardEl = document.querySelector(secondCard);
+			window.setTimeout(function() {
+				firstCardEl.classList.add('facedown');
+				secondCardEl.classList.add('facedown');
+			}, 2*1000);
+			clickedCards = [];
+		}
+	}
+};
 
+// var doTheyMatch = function(click1, click2) {
+// 	if  {
+// 		console.log("It's a match!")
+// 	}
+// }
 
+// doTheyMatch(firstClick, secondClick)
 
 
 $('.card').on('click', handleClick)
 
 
 
-function shuffleArray(array) {
+function shuffle(array) {
     for (var i = characterList.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = characterList[i];
@@ -104,16 +88,16 @@ function shuffleArray(array) {
     return characterList;
 };
 
+
 var newGame = function(event){
-	console.log("clicked")
-	shuffleArray(characterList)
-	var shuffledCharacters = shuffleArray(characterList) 
+	shuffle(characterList)
+	var shuffledCharacters = shuffle(characterList) 
 	var cards = $('.card');
 	for (i = 0; i < shuffledCharacters.length; i++) {
 		cards.eq(i).addClass(shuffledCharacters[i].name)
 	}
-	
 }
+
 
 var startNewGame = document.querySelector(".new-game-button");
 startNewGame.addEventListener("click", newGame);
