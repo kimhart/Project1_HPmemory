@@ -1,0 +1,103 @@
+body {
+	background-image: url("images/background.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	color: #000;
+	font-family: 'Roboto', sans-serif; /* weight 300, 400, 500, 700 / italc */
+}
+
+.main-page {
+	background: rgba(0, 0, 0, 0.6);
+	display: block;
+	width: 60%;
+	margin: 0 auto;
+}
+
+.title-image{
+	height: 110px;
+	width: 550px;
+	display: block;
+	margin: 0 auto;
+	margin-top: 40px;
+	padding-top: 10px;
+}
+
+.board {
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 80%;
+	display: block;
+	height: 450px;
+}
+.row-1, .row-2 {
+	margin: auto;
+	width: 80%;
+	display: block;
+}
+
+.card {
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 25%;
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	height: 145px;
+	cursor: pointer;
+	float: left;
+}
+
+.harry {
+	background-image: url("images/harry.png");
+}
+
+.hermione {
+	background-image: url("images/hermione.png");
+}
+
+.ron {
+	background-image: url("images/ron.png");
+}
+
+.dobby {
+	background-image: url("images/dobby.png");
+}
+
+.facedown {
+	background-image: url("images/facedown_card.png");
+	cursor: pointer;
+}
+
+.new-game-button {
+	margin: 0 auto;
+	min-width: 25%;
+	display: block;
+	background-color: white;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 18px;
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 20px;
+	cursor: pointer;
+	background-color: #556B2F;
+}
+
+.win-or-lose-textbox {
+	background: rgba(0, 0, 0, 0.6);
+	margin: 0 auto;
+	padding-bottom: 50px;
+	width: 80%;
+	display: block;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	color: #FFFFFF;
+}
+
+
+
+
+
+
