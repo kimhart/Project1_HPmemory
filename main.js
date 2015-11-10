@@ -12,57 +12,57 @@ var allCards = document.querySelectorAll(".card");
 
 var characterList = [ 
 	{name: "harry", img: "images/harry.png"}, 
-<<<<<<< HEAD
-	{name: "harry2", img: "images/harry.png"},
-	{name: "hermione", img: "images/hermione.png"},
-	{name: "hermione2", img: "images/hermione.png"},
-	{name: "ron", img: "images/ron.png"},
-	{name: "ron2", img: "images/ron.png"},
-	{name: "dobby", img: "images/dobby.png"},
-	{name: "dobby2", img: "images/dobby.png"}
-];
+// <<<<<<< HEAD
+// 	{name: "harry2", img: "images/harry.png"},
+// 	{name: "hermione", img: "images/hermione.png"},
+// 	{name: "hermione2", img: "images/hermione.png"},
+// 	{name: "ron", img: "images/ron.png"},
+// 	{name: "ron2", img: "images/ron.png"},
+// 	{name: "dobby", img: "images/dobby.png"},
+// 	{name: "dobby2", img: "images/dobby.png"}
+// ];
 
 
-var flipCard1 = function(event){
-	card1.classList.remove("facedown");
-	card1.classList.add("character")
-    console.log(event);
-};
-var flipCard2 = function(event){
-	card2.classList.remove("facedown");
-	card2.classList.add("character")
-    console.log(event);
-};
-var flipCard3 = function(event){
-	card3.classList.remove("facedown");
-	card3.classList.add("character")
-    console.log(event);
-};
-var flipCard4 = function(event){
-	card4.classList.remove("facedown");
-	card4.classList.add("character")
-    console.log(event);
-};
-var flipCard5 = function(event){
-	card5.classList.remove("facedown");
-	card5.classList.add("character")
-    console.log(event);
-};
-var flipCard6 = function(event){
-	card6.classList.remove("facedown");
-	card6.classList.add("character")
-    console.log(event);
-};
-var flipCard7 = function(event){
-	card7.classList.remove("facedown");
-	card7.classList.add("character")
-    console.log(event);
-};
-var flipCard8 = function(event){
-	card8.classList.remove("facedown");
-	card8.classList.add("character")
-    console.log(event);
-=======
+// var flipCard1 = function(event){
+// 	card1.classList.remove("facedown");
+// 	card1.classList.add("character")
+//     console.log(event);
+// };
+// var flipCard2 = function(event){
+// 	card2.classList.remove("facedown");
+// 	card2.classList.add("character")
+//     console.log(event);
+// };
+// var flipCard3 = function(event){
+// 	card3.classList.remove("facedown");
+// 	card3.classList.add("character")
+//     console.log(event);
+// };
+// var flipCard4 = function(event){
+// 	card4.classList.remove("facedown");
+// 	card4.classList.add("character")
+//     console.log(event);
+// };
+// var flipCard5 = function(event){
+// 	card5.classList.remove("facedown");
+// 	card5.classList.add("character")
+//     console.log(event);
+// };
+// var flipCard6 = function(event){
+// 	card6.classList.remove("facedown");
+// 	card6.classList.add("character")
+//     console.log(event);
+// };
+// var flipCard7 = function(event){
+// 	card7.classList.remove("facedown");
+// 	card7.classList.add("character")
+//     console.log(event);
+// };
+// var flipCard8 = function(event){
+// 	card8.classList.remove("facedown");
+// 	card8.classList.add("character")
+//     console.log(event);
+// =======
 	{name: "harry", img: "images/harry.png"},
 	{name: "hermione", img: "images/hermione.png"},
 	{name: "hermione", img: "images/hermione.png"},
@@ -114,7 +114,6 @@ var handleClick = function(event) {
 			clickedCards = [];
 		}
 	}
->>>>>>> phil-pairing
 };
 
 $('.card').on('click', handleClick)
