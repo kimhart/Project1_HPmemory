@@ -46,12 +46,16 @@ var handleClick = function(event) {
 		if (clickedCards[0].name === clickedCards[1].name) {
 			winOrLose.textContent=("It's a match! 10 points to Gryffindor!");
 			clickedCards = [];
+			if($('.facedown').length === 0) {
+				winOrLose.textContent=("You win!");
+				$('.card').addClass("facedown");
+			}
 		} else {
 			var firstCard = '#' + clickedCards[0].id; 
 			var secondCard = '#' + clickedCards[1].id;
 			var firstCardEl = document.querySelector(firstCard);
 			var secondCardEl = document.querySelector(secondCard);
-			winOrLose.textContent=("Nope. 10 points to Slytherin.");
+			winOrLose.textContent=("10 points to Slytherin. Try again!");
 			window.setTimeout(function() {
 				firstCardEl.classList.add('facedown');
 				secondCardEl.classList.add('facedown');
