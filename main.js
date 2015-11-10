@@ -1,7 +1,4 @@
 
-
-// STUPID STUPID NOT-DRY SHAMELESS CODE //
-
 var card1 = document.querySelector("#card1");
 var card2 = document.querySelector("#card2");
 var card3 = document.querySelector("#card3");
@@ -15,6 +12,7 @@ var allCards = document.querySelectorAll(".card");
 
 var characterList = [ 
 	{name: "harry", img: "images/harry.png"}, 
+<<<<<<< HEAD
 	{name: "harry2", img: "images/harry.png"},
 	{name: "hermione", img: "images/hermione.png"},
 	{name: "hermione2", img: "images/hermione.png"},
@@ -64,29 +62,66 @@ var flipCard8 = function(event){
 	card8.classList.remove("facedown");
 	card8.classList.add("character")
     console.log(event);
+=======
+	{name: "harry", img: "images/harry.png"},
+	{name: "hermione", img: "images/hermione.png"},
+	{name: "hermione", img: "images/hermione.png"},
+	{name: "ron", img: "images/ron.png"},
+	{name: "ron", img: "images/ron.png"},
+	{name: "dobby", img: "images/dobby.png"},
+	{name: "dobby", img: "images/dobby.png"}
+];
+
+
+var clickedCards = [];
+
+var names = ['harry', 'hermione', 'ron', 'dobby'];
+
+var winOrLose = document.querySelector(".win-or-lose-textbox");
+	
+var handleClick = function(event) {
+	var classes = event.target.classList;
+	var cardName;
+	for (var i =0; i < classes.length; i++) {
+		if(names.indexOf(classes[i]) !== -1) {
+			cardName = classes[i];
+		}
+	}
+	var cardId = event.target.id;
+	var cardObj = {name: cardName, id: cardId};
+	clickedCards.push(cardObj);
+	event.target.classList.remove('facedown');
+
+	if (clickedCards.length === 2) {
+		console.log(clickedCards);
+		if (clickedCards[0].name === clickedCards[1].name) {
+			winOrLose.textContent=("It's a match! 10 points to Gryffindor!");
+			clickedCards = [];
+			if($('.facedown').length === 0) {
+				winOrLose.textContent=("You win!");
+				$('.card').addClass("facedown");
+			}
+		} else {
+			var firstCard = '#' + clickedCards[0].id; 
+			var secondCard = '#' + clickedCards[1].id;
+			var firstCardEl = document.querySelector(firstCard);
+			var secondCardEl = document.querySelector(secondCard);
+			winOrLose.textContent=("10 points to Slytherin. Try again!");
+			window.setTimeout(function() {
+				firstCardEl.classList.add('facedown');
+				secondCardEl.classList.add('facedown');
+			}, 2*1000);
+			clickedCards = [];
+		}
+	}
+>>>>>>> phil-pairing
 };
 
-card1.addEventListener("click", flipCard1);
-card2.addEventListener("click", flipCard2);
-card3.addEventListener("click", flipCard3);
-card4.addEventListener("click", flipCard4);
-card5.addEventListener("click", flipCard5);
-card6.addEventListener("click", flipCard6);
-card7.addEventListener("click", flipCard7);
-card8.addEventListener("click", flipCard8);
+$('.card').on('click', handleClick)
 
 
-// ALSO NOT WORKING 
 
-// var turnAllFacedown = function(event){
-// 	if (allCards.classList.contains("character"){
-// 		return allCards.classList.remove("character");
-// 		       allCards.classList.add("facedown");
-// 	}	
-// };
-
-
-function shuffleArray(array) {
+function shuffle(array) {
     for (var i = characterList.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = characterList[i];
@@ -97,27 +132,18 @@ function shuffleArray(array) {
 };
 
 
+var newGame = function(event){
+	var shuffledCharacters = shuffle(characterList);
+	var cards = $('.card');
+	cards.removeClass("hidden");
+	for (i = 0; i < shuffledCharacters.length; i++) {
+		cards.eq(i).addClass(shuffledCharacters[i].name)
+	}
+}
+
+
 var startNewGame = document.querySelector(".new-game-button");
-startNewGame.addEventListener("click", shuffleArray);
-// startNewGame.addEventListener("click", turnAllFacedown); // ISN'T WORKING WITH TWO EVENT LISTENERS
-
-
-
-// var winOrLoseBox = document.querySelector(".win-or-lose-textbox");
-// var choice1 = ??? //how do I determine this mofoooooo
-// var choice2 = ???
-
-
-// // do they match?? 
-// var doTheCardsMatch = function() {
-// 	if (choice1 === choice2) {
-// 		winOrLoseBox.textContent = "10 Points for Gryffindor! Keep going!";
-// 		// remove after a few seconds?
-// 	} else {
-// 		winOrLoseBox.textContent = ""
-// 	}
-// }
-
+startNewGame.addEventListener("click", newGame);
 
 
 
