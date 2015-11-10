@@ -29,7 +29,7 @@ body {
 	display: block;
 	height: 450px;
 }
-.row-1, .row-2 {
+.row { 
 	margin: auto;
 	width: 80%;
 	display: block;
@@ -84,18 +84,23 @@ body {
 }
 
 .win-or-lose-textbox {
-	background: rgba(0, 0, 0, 0.6);
 	margin: 0 auto;
-	padding-bottom: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	width: 80%;
 	display: block;
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	font-weight: 300;
+	font-style: italic;
 	color: #FFFFFF;
+
 }
 
+.hidden {
+	opacity: 0;
+}
 
 
 

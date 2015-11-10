@@ -1,6 +1,4 @@
 
-
-
 var card1 = document.querySelector("#card1");
 var card2 = document.querySelector("#card2");
 var card3 = document.querySelector("#card3");
@@ -24,14 +22,11 @@ var characterList = [
 ];
 
 
-// determining first and second click
-// var firstClick = false;
-// var secondClick = false;
-
 var clickedCards = [];
 
 var names = ['harry', 'hermione', 'ron', 'dobby'];
 
+var winOrLose = document.querySelector(".win-or-lose-textbox");
 	
 var handleClick = function(event) {
 	var classes = event.target.classList;
@@ -49,13 +44,14 @@ var handleClick = function(event) {
 	if (clickedCards.length === 2) {
 		console.log(clickedCards);
 		if (clickedCards[0].name === clickedCards[1].name) {
-			console.log('YOU WON');
+			winOrLose.textContent=("It's a match! 10 points to Gryffindor!");
 			clickedCards = [];
 		} else {
 			var firstCard = '#' + clickedCards[0].id; 
 			var secondCard = '#' + clickedCards[1].id;
 			var firstCardEl = document.querySelector(firstCard);
 			var secondCardEl = document.querySelector(secondCard);
+			winOrLose.textContent=("Nope. 10 points to Slytherin.");
 			window.setTimeout(function() {
 				firstCardEl.classList.add('facedown');
 				secondCardEl.classList.add('facedown');
@@ -64,15 +60,6 @@ var handleClick = function(event) {
 		}
 	}
 };
-
-// var doTheyMatch = function(click1, click2) {
-// 	if  {
-// 		console.log("It's a match!")
-// 	}
-// }
-
-// doTheyMatch(firstClick, secondClick)
-
 
 $('.card').on('click', handleClick)
 
@@ -90,9 +77,9 @@ function shuffle(array) {
 
 
 var newGame = function(event){
-	shuffle(characterList)
-	var shuffledCharacters = shuffle(characterList) 
+	var shuffledCharacters = shuffle(characterList);
 	var cards = $('.card');
+	cards.removeClass("hidden");
 	for (i = 0; i < shuffledCharacters.length; i++) {
 		cards.eq(i).addClass(shuffledCharacters[i].name)
 	}
@@ -101,13 +88,6 @@ var newGame = function(event){
 
 var startNewGame = document.querySelector(".new-game-button");
 startNewGame.addEventListener("click", newGame);
-// startNewGame.addEventListener("click", turnAllFacedown); // ISN'T WORKING WITH TWO EVENT LISTENERS
-
-
-
-
-
-//win or lose box in a separate function
 
 
 
