@@ -27,24 +27,24 @@ body {
 	margin-top: 10px;
 	width: 80%;
 	display: block;
-	height: 450px;
+	height: 650px;
 }
 .row { 
 	margin: auto;
-	width: 80%;
+	width: 90%;
 	display: block;
 }
 
 .card {
 	background-size: contain;
 	background-repeat: no-repeat;
-	width: 25%;
-	display: block;
+	width: 16%;
+	display: inline-block;
 	margin: 0 auto;
 	margin-top: 20px;
 	height: 145px;
 	cursor: pointer;
-	float: left;
+	
 }
 
 .harry {
@@ -63,10 +63,31 @@ body {
 	background-image: url("images/dobby.png");
 }
 
+.mcG {
+	background-image: url("images/McG.png");
+}
+
+.dumbledore {
+	background-image: url("images/dumbledore.png");
+}
+
+.hagrid {
+	background-image: url("images/hagrid.png");
+}
+
+.voldemort {
+	background-image: url("images/voldemort.png");
+}
+
+.neville {
+	background-image: url("images/neville.png");
+}
+
 .facedown {
 	background-image: url("images/facedown_card.png");
 	cursor: pointer;
 }
+
 
 .new-game-button {
 	margin: 0 auto;
@@ -95,7 +116,8 @@ body {
 	font-weight: 300;
 	font-style: italic;
 	color: #FFFFFF;
-
+	line-height: 1em;
+	height: 1em;
 }
 
 .hidden {
