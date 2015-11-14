@@ -74,7 +74,7 @@ var handleClick = function(event) {
 				window.setTimeout(function() {
 				$('.card').addClass("facedown");
 				}, 2000);
-			} return newgame();
+			} 	newgame();
 		} else {
 			var firstCard = '#' + clickedCards[0].id; 
 			var secondCard = '#' + clickedCards[1].id;
